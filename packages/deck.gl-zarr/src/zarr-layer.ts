@@ -134,7 +134,8 @@ export type ZarrLayerProps<
 
   /**
    * Resolver for authority:code CRS strings (e.g. "EPSG:4326").
-   * Defaults to fetching from epsg.io.
+   * Defaults to looking up the code in the bundled EPSG database
+   * (`@developmentseed/epsg`).
    */
   epsgResolver?: EpsgResolver;
 };

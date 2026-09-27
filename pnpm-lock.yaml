@@ -1127,6 +1127,9 @@ importers:
 
   packages/proj:
     dependencies:
+      '@developmentseed/epsg':
+        specifier: workspace:^
+        version: link:../epsg
       wkt-parser:
         specifier: 1.5.5
         version: 1.5.5

@@ -96,9 +96,10 @@ export type COGLayerProps<DataT extends MinimalTileData = DefaultDataT> = Omit<
      * information (as returned by `wkt-parser`).
      *
      * The default implementation:
-     * - makes a request to epsg.io to resolve EPSG codes found in the GeoTIFF.
-     * - caches any previous requests
-     * - parses PROJJSON response with `wkt-parser`
+     * - looks up EPSG codes found in the GeoTIFF in the bundled EPSG database
+     *   (`@developmentseed/epsg`), which is fetched lazily on first use.
+     * - caches any previous lookups
+     * - parses the WKT definition with `wkt-parser`
      */
     epsgResolver?: EpsgResolver;
 
